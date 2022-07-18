@@ -18,6 +18,16 @@
 
   Color pallates for white & black are my own, and Midnight is from the Atom One theme for Visual Studio Code.
   All Code was written in Visual Studio Code. ( Even some of the SVG's were modified from within VS Code :)
+
+Main BG #fff            
+Text BG #eee            
+Disabled BG #cdcdcd     
+Button BG #eee          
+Hover BG #D3D3D3        
+Select BG #ccc          
+Text Normal #000        
+Text Disabled #c8c8c8   
+
   */
 * {
   background: #fff;
@@ -28,7 +38,8 @@
 }
 
 *:disabled {
-  background: #cdcdcd
+  background: #cdcdcd;
+  border-radius: 4px;
 }
 
 QWidget {
@@ -84,7 +95,7 @@ QAbstractItemView {
   selection-background-color: none;
   selection-color: #000;
   color: #000;
-  font-size: 11pt;
+  font-size: 10.5pt;
   border-bottom: 3.4px transparent;
 }
 
@@ -196,11 +207,11 @@ DownloadListView:item[downloadView=compact] {
 }
 
 DownloadListView[downloadView=standard] {
-  font: 600 10pt;
+  font: 600 9.5pt;
 }
 
 DownloadListView[downloadView=compact] {
-  font: 600 9pt;
+  font: 600 8.5pt;
 }
 
 
@@ -213,14 +224,14 @@ QProgressBar::chunk {
 
 QProgressBar[downloadView=standard] {
   margin: 8 0;
-  font: 600 10pt;
+  font: 600 9.5pt;
   background: transparent;
 }
 
 QProgressBar[downloadView=compact] {
   margin: 1 0;
   background: transparent;
-  font: 600 9pt;
+  font: 600 8.5pt;
 }
 
 PluginListView {
@@ -237,7 +248,7 @@ ModListView {
 QTabBar {
   background: #eee;
   border-radius: 4px;
-  font-size: 11pt;
+  font-size: 10.5pt;
   color: #000;
 }
 
@@ -308,7 +319,7 @@ QScrollBar:vertical {
 }
 
 QScrollBar::handle {
-  background: #ccc;
+  background: #eee;
   border-radius: 4px;
   margin: 3px;
 }
@@ -482,14 +493,17 @@ QMenu {
   color: #000;
   background: #eee;
   border: none;
-  font: 600 12pt;
+  font: 600 11pt;
+}
+QMenu:hover {
+  background-color: #D3D3D3;
 }
 
 QMenu QPushButton {
   text-align: left;
-  font-size: 12pt;
+  font-size: 11pt;
   background: #eee;
-  height: 36;
+  height: 26;
   padding-right: 24px;
   padding-left: 8;
   border-radius: 0;
@@ -526,27 +540,28 @@ QMenu::right-arrow {
 
 QMenu::item {
   color: #000;
-  font-size: 12pt;
+  font-size: 11pt;
   background: #eee;
   border: none;
-  height: 36;
+  height: 32;
   min-width: 40;
   padding-right: 24px;
   padding-left: 8;
 }
 
-QMenu::item:disabled {
-  background: #cdcdcd;
+QMenu:disabled, QMenu::item:disabled {
+  background: #eee;
   border: none;
 }
+QMenu::item:hover {
+  background-color: D3D3D3;
+}
+
 
 QMenu::item:selected {
   color: #000;
-  background: #ccc;
+  background: #999999;
 }
-
-
-
 
 QToolBar {
   background: transparent;
@@ -556,7 +571,6 @@ QToolBar {
 
 QToolBar::handle {
   background-color: #eee;
-  border: none;
   border-radius: 4px;
 }
 
@@ -570,6 +584,9 @@ QToolBar:menu-indicator {
   image: url("./Fluency/BlackIcons/Arrows/down.svg");
   margin: 4px;
 }
+#toolBar {
+  qproperty-movable: true; 
+}
 
 #toolBar QToolButton {
   qproperty-iconSize: 20px;
@@ -581,17 +598,18 @@ QToolBar:menu-indicator {
   border-radius: 4px;
   margin-left: 12px;
   margin: 0px 2px 2px 0px;
-  min-width: 64px;
-  min-height: 64px;
+  /*min-width: 64px;*/
+  /*min-height: 64px;*/
   max-width: 1024;
   max-height: 1024;
   font: 600 9.5pt;
 }
-
-#toolBar QToolButton:hover,
-#toolBar QToolButton:pressed {
-  background: #D3D3D3;
+#toolBar QToolButton:hover, #toolBar QToolButton:pressed {
+  background: #D3D3D3; 
 }
+
+
+
 
 
 
@@ -628,6 +646,10 @@ QComboBox::drop-down {
   padding-left: 5px;
   border-radius: 4px;
 
+}
+QComboBox:hover,
+QComboBox::drop-down:hover {
+  border: 1px solid #999999;
 }
 
 QComboBox:on,
@@ -666,6 +688,9 @@ QComboBox::down-arrow {
   border: none;
 }
 
+#executablesListBox:hover {
+  border: 1px solid #999999;
+}
 
 #startButton {
   background: #0091ff;
@@ -1050,7 +1075,7 @@ LinkLabel {
 }
 
 #stepsStack {
-  border: 1px solid white;
+  border: 1px solid #eee;
   border-radius: 4px;
 }
 

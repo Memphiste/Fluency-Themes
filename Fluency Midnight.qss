@@ -18,6 +18,16 @@
 
   Color pallates for white & black are my own, and Midnight is from the Atom One theme for Visual Studio Code.
   All Code was written in Visual Studio Code. ( Even some of the SVG's were modified from within VS Code :)
+
+  Main BG #282c34
+  Text BG #333841
+  Button BG #333841    
+  Disabled BG #4d5564
+  Hover BG #677183
+  Select BG #2c313c
+  Text Normal #abb2bf
+  Text Disabled #6e7a91
+
   */
 * {
   background: #282c34;
@@ -28,7 +38,8 @@
 }
 
 *:disabled {
-  background: #4d5564
+  background: #4d5564;
+  border-radius: 4px;
 }
 
 QWidget {
@@ -84,7 +95,7 @@ QAbstractItemView {
   selection-background-color: none;
   selection-color: #abb2bf;
   color: #abb2bf;
-  font-size: 11pt;
+  font-size: 10.5pt;
   border-bottom: 3.4px transparent;
 }
 
@@ -103,7 +114,7 @@ QAbstractItemView::item:hover,
 QAbstractItemView::branch:hover,
 QAbstractItemView::branch:selected:hover,
 QAbstractItemView::item:selected:hover {
-  background-color: #262a31;
+  background-color: #677183;
 }
 
 
@@ -170,7 +181,7 @@ QHeaderView::section:last {
 }
 
 QHeaderView::section:hover {
-  background-color: #262a31;
+  background-color: #677183;
 }
 
 
@@ -196,11 +207,11 @@ DownloadListView:item[downloadView=compact] {
 }
 
 DownloadListView[downloadView=standard] {
-  font: 600 10pt;
+  font: 600 9.5pt;
 }
 
 DownloadListView[downloadView=compact] {
-  font: 600 9pt;
+  font: 600 8.5pt;
 }
 
 
@@ -213,14 +224,14 @@ QProgressBar::chunk {
 
 QProgressBar[downloadView=standard] {
   margin: 8 0;
-  font: 600 10pt;
+  font: 600 9.5pt;
   background: transparent;
 }
 
 QProgressBar[downloadView=compact] {
   margin: 1 0;
   background: transparent;
-  font: 600 9pt;
+  font: 600 8.5pt;
 }
 
 PluginListView {
@@ -237,7 +248,7 @@ ModListView {
 QTabBar {
   background: #333841;
   border-radius: 4px;
-  font-size: 11pt;
+  font-size: 10.5pt;
   color: #abb2bf;
 }
 
@@ -267,7 +278,7 @@ QTabBar::tab:disabled {
 
 QTabBar::tab:hover {
   color: #abb2bf;
-  background: #262a31;
+  background: #677183;
   border: none;
 }
 
@@ -308,14 +319,14 @@ QScrollBar:vertical {
 }
 
 QScrollBar::handle {
-  background: #2c313c;
+  background: #333841;
   border-radius: 4px;
   margin: 3px;
 }
 
 QScrollBar::handle:hover,
 QScrollBar::handle:pressed {
-  background: #262a31;
+  background: #677183;
 }
 
 QScrollBar::add-line,
@@ -384,14 +395,14 @@ QToolButton {
 }
 
 QToolButton:hover {
-  background: #262a31;
+  background: #677183;
   color: #abb2bf;
   border: 0;
 }
 
 QPushButton:hover,
 QToolButton:hover {
-  background: #262a31;
+  background: #677183;
 }
 
 QPushButton:pressed,
@@ -443,7 +454,7 @@ QDoubleSpinBox::up-button {
 
 QSpinBox::up-button:hover,
 QDoubleSpinBox::up-button:hover {
-  background: #262a31;
+  background: #677183;
   border-radius: 4;
 }
 
@@ -458,7 +469,7 @@ QDoubleSpinBox::down-button {
 
 QSpinBox::down-button:hover,
 QDoubleSpinBox::down-button:hover {
-  background: #262a31;
+  background: #677183;
   border-radius: 4;
 }
 
@@ -482,14 +493,17 @@ QMenu {
   color: #abb2bf;
   background: #333841;
   border: none;
-  font: 600 12pt;
+  font: 600 11pt;
+}
+QMenu:hover {
+  background-color: #677183;
 }
 
 QMenu QPushButton {
   text-align: left;
-  font-size: 12pt;
+  font-size: 11pt;
   background: #333841;
-  height: 36;
+  height: 26;
   padding-right: 24px;
   padding-left: 8;
   border-radius: 0;
@@ -505,7 +519,7 @@ QMenu QRadioButton {
 
 QMenu QCheckBox:hover,
 QMenu QRadioButton:hover {
-  background: #262a31;
+  background: #677183;
   color: #abb2bf;
 }
 
@@ -526,27 +540,28 @@ QMenu::right-arrow {
 
 QMenu::item {
   color: #abb2bf;
-  font-size: 12pt;
+  font-size: 11pt;
   background: #333841;
   border: none;
-  height: 36;
+  height: 32;
   min-width: 40;
   padding-right: 24px;
   padding-left: 8;
 }
 
-QMenu::item:disabled {
-  background: #4d5564;
+QMenu:disabled, QMenu::item:disabled {
+  background: #333841;
   border: none;
 }
+QMenu::item:hover {
+  background-color: 677183;
+}
+
 
 QMenu::item:selected {
   color: #abb2bf;
-  background: #2c313c;
+  background: #677183;
 }
-
-
-
 
 QToolBar {
   background: transparent;
@@ -556,7 +571,6 @@ QToolBar {
 
 QToolBar::handle {
   background-color: #333841;
-  border: none;
   border-radius: 4px;
 }
 
@@ -570,6 +584,9 @@ QToolBar:menu-indicator {
   image: url("./Fluency/MidnightIcons/Arrows/down.svg");
   margin: 4px;
 }
+#toolBar {
+  qproperty-movable: true; 
+}
 
 #toolBar QToolButton {
   qproperty-iconSize: 20px;
@@ -581,17 +598,18 @@ QToolBar:menu-indicator {
   border-radius: 4px;
   margin-left: 12px;
   margin: 0px 2px 2px 0px;
-  min-width: 64px;
-  min-height: 64px;
+  /*min-width: 64px;*/
+  /*min-height: 64px;*/
   max-width: 1024;
   max-height: 1024;
   font: 600 9.5pt;
 }
-
-#toolBar QToolButton:hover,
-#toolBar QToolButton:pressed {
-  background: #262a31;
+#toolBar QToolButton:hover, #toolBar QToolButton:pressed {
+  background: #677183; 
 }
+
+
+
 
 
 
@@ -628,6 +646,10 @@ QComboBox::drop-down {
   padding-left: 5px;
   border-radius: 4px;
 
+}
+QComboBox:hover,
+QComboBox::drop-down:hover {
+  border: 1px solid #677183;
 }
 
 QComboBox:on,
@@ -666,6 +688,9 @@ QComboBox::down-arrow {
   border: none;
 }
 
+#executablesListBox:hover {
+  border: 1px solid #677183;
+}
 
 #startButton {
   background: #0091ff;
@@ -727,7 +752,7 @@ QueryOverwriteDialog QPushButton {
 
 #tabWidget QToolButton:hover {
   color: #abb2bf;
-  background: #262a31;
+  background: #677183;
   border: none;
 }
 
@@ -892,7 +917,7 @@ QMenuBar::item:selected {
 
 QTextEdit {
   color: #abb2bf;
-  background: #282c34;
+  background: #333841;
   border-radius: 4px;
 }
 
@@ -961,7 +986,7 @@ QSlider::handle {
 }
 
 QSlider::handle:hover {
-  background: #262a31;
+  background: #677183;
 }
 
 #InstanceManagerDialog #createNew,
@@ -993,7 +1018,7 @@ QSlider::handle:hover {
 }
 
 #EditExecutablesDialog QToolButton:hover {
-  background: #262a31;
+  background: #677183;
 }
 
 #EditExecutablesDialog #add {
@@ -1050,7 +1075,7 @@ LinkLabel {
 }
 
 #stepsStack {
-  border: 1px solid white;
+  border: 1px solid #333841;
   border-radius: 4px;
 }
 
